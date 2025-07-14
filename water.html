@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>물 분자 수 구하기</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <button class='weight_button' type="button" onclick="weight()">체중 입력</button>
+  <div id='result_div'>결과 : </div>
+  <script>
+    function weight(){
+      real_weight = prompt("체중을 입력하세요") //체중 입력(kg)
+      water_weight = real_weight * 0.7 * 1000 //물 무게 계산(g)
+      water_mol = water_weight / 18 //몰 계산
+      water_molecules = water_mol * 6
+      result = `물 분자 수 : ${String(Math.round(water_molecules))}×10^23개` //결과
+      const element = document.getElementById('result_div');
+      element.innerHTML = `<div id='result_div'>결과 : ${result}<div>`
+    }
+  </script>
+</body>
+</html>
